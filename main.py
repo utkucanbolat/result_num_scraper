@@ -17,11 +17,11 @@ class FrequencyScrapper:
         self.google_search_bar_xpath_first = '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input'
         self.google_search_bar_xpath_not_first = '/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div[1]/div/div[2]/input'
 
-        self._init_driver()
-
         self.is_first_call = True  # first search is different from the rest. True if it's the first search, false otherwise.
         self.intrinsic_wait = 1  # wait between search, enter keys, etc. to settle.
         self.search_time = 10  # wait this much, if it still cannot scrape, re-initilize the browser
+        
+        self._init_driver()
 
         self.coin_list = []
         with open("coin_list.csv", "r") as f:
